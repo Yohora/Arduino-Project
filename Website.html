@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+        <title>Temperature Data</title>
+    </head>
+
+    <header>Yohora</header>
+
+    <h1> Live Ambient Temperature </h1>
+
+    <hr>
+
+    <body>
+        <canvas id="graph" width="400" height="200" style="border:1px solid #000000;"></canvas>
+        <script>
+            const ylabels = [];
+            const xlabels = [];
+
+            chartIt();
+            async function chartIt(){
+                await getData();
+                const ctx = document.getElementById('graph').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: xlabels,
+                        datasets: [{
+                            label:'Ambient Temperature',
+                            data: ylabels,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            fill: false,
+                            tension: 0.3,
+                    
+                        }]
+                    },
+                    options: {
+                        borderDashoffset: 0,
+                        aspectRatio: 4,
+                        animation: {
+
+                                    duration: 0
+
+                                },
+                        responsive: true,
+                        radius: 5,
+                        hitRadius: 20,
+                        pointStyle: 'circle',
+                        maintainAspectRatio: true,
+                        showScale: false,
+                        scales: {
+                            y: {
+                                beginAtZero: false
+                            },
+
+                            x:{
+                                min: 3
+                            }
+                        }
+                    }
+                });
+        };
+
+        async function getData(){
+            const response = await fetch('test_temperature_data.csv');
+            const data = await response.text();
+            const table = data.split('\n');
+        
+            table.forEach(row => {
+                const columns = row.split(',');
+                const Time = columns[0];
+                xlabels.push(Time);
+                const Temperature = columns[1];
+                ylabels.push(Temperature);
+            });
+        }
+
+        </script>
+
+
+        <img src="" id="onichan" width="500" height="100"/>
+        <script src="index.js"></script>
+
+   
+    </body>
+
+</html>

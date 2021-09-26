@@ -1,0 +1,66 @@
+((((Live Room Temperature Project))))
+
+  Design a website that streams live ambient temperature data from an arduino microcontroller.
+
+Front End (Client side)
+  HTML 
+  CSS (sass)
+  JavaScript (chart.js)
+
+These are used to build the website and configure its design
+
+
+Backend
+  C++ (Collects voltage data from temperature probs and converts it to a temperature reading)
+  Python (Collects streaming temperature data and puts it into a .csv file)
+
+These are used to collect and transform the data gathered to something that can be presented client side
+
+
+((((Git & GITHUB))))
+
+GIT(Global Information Tracker) - Version Control, keep track of different versions of your project. Local to your system.
+- Gives you a full revision history of your projects.
+- Syncronises code beteween various people I.E., you can both make changes to the same document and then merge them together in a     central server I.E., gives everyone the latest version of code.
+- Good at testing changes to code without losing original I.E., branching.
+- Can revert back to previous versions 
+
+
+
+GitHub - cloud based hosting service for Git respositories (folder where you contain code you want to keep track of I.E., the versions)
+ - Other people can then interact with these versions over the cloud. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

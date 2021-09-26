@@ -1,0 +1,36 @@
+/* Define standard variables and values for website */
+/* Use the variables */
+body {
+  background-color: lightblue;
+  color: darkblue;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: lightslategrey;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid black;
+  border-color: black;
+  background-color: black;
+  border-bottom: black;
+  color: black;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */
